@@ -1,7 +1,7 @@
 import unittest
 
-from product import Product
-from store import Store
+from models.product import Product
+from models.store import Store
 
 
 class TestStore(unittest.TestCase):

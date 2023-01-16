@@ -1,6 +1,6 @@
 import unittest
 
-from models.customer import Customer
+from customer import Customer
 
 
 class TestCustomer(unittest.TestCase):

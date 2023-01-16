@@ -1,9 +1,9 @@
 import unittest
 
-from models.customer import Customer
-from models.discount import Discount
-from models.order import Order
-from models.product import Product
+from customer import Customer
+from discount import Discount
+from order import Order
+from product import Product
 
 
 class TestDiscount(unittest.TestCase):

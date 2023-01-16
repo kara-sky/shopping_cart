@@ -1,10 +1,10 @@
-from models.cart import Cart
-from models.customer import Customer
-from models.discount import Discount
-from models.order import Order
-from models.payment import Payment
-from models.product import Product
-from models.store import Store
+from cart import Cart
+from customer import Customer
+from discount import Discount
+from order import Order
+from payment import Payment
+from product import Product
+from store import Store
 
 if __name__ == "__main__":
     # Create some products
@@ -37,4 +37,4 @@ if __name__ == "__main__":
     # Process payment
     payment = Payment()
     payment_info = {'card_number': '4111111111111111', 'expiry_date': '12/25', 'cvv': '123'}
-    payment.process_payment(order, payment_info)
+    payment.process_a_payment(order, payment_info)

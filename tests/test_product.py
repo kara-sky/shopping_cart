@@ -1,6 +1,6 @@
 import unittest
 
-from models.product import Product
+from product import Product
 
 
 class TestProduct(unittest.TestCase):

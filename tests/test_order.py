@@ -1,9 +1,9 @@
 import datetime
 import unittest
 
-from models.customer import Customer
-from models.order import Order
-from models.product import Product
+from customer import Customer
+from order import Order
+from product import Product
 
 
 class TestOrder(unittest.TestCase):

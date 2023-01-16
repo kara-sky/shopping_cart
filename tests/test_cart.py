@@ -1,9 +1,9 @@
 import unittest
 
-from models.cart import Cart
-from models.customer import Customer
-from models.order import Order
-from models.product import Product
+from cart import Cart
+from customer import Customer
+from order import Order
+from product import Product
 
 
 class TestCart(unittest.TestCase):

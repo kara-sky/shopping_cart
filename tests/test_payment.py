@@ -1,10 +1,9 @@
 import unittest
 
-from customer import Customer
-from order import Order
-from payment import Payment
-from product import Product
-
+from models.customer import Customer
+from models.order import Order
+from models.payment import Payment
+from models.product import Product
 
 class TestPayment(unittest.TestCase):
     def setUp(self):

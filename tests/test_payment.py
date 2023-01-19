@@ -1,10 +1,9 @@
 import unittest
 
-from customer import Customer
-from order import Order
-from payment import Payment
-from product import Product
-
+from models.customer import Customer
+from models.order import Order
+from models.payment import Payment
+from models.product import Product
 
 class TestPayment(unittest.TestCase):
     def setUp(self):
@@ -22,7 +21,7 @@ class TestPayment(unittest.TestCase):
         self.assertEqual(self.order.status, "PAID")
 
     # disable this test case for now because the process_a_payment method is hard coded to succeed
-    # def test_process_payment_fail(self):
-    #     payment_info = {'card_number': '4111111111111111', 'expiry_date': '12/25', 'cvv': '123'}
-    #     self.assertFalse(self.payment.process_a_payment(self.order, payment_info))
-    #     self.assertEqual(self.order.status, "FAILED")
+    def test_process_payment_fail(self):
+        payment_info = {'card_number': '4111111111111111', 'expiry_date': '12/25', 'cvv': '123'}
+        self.assertFalse(self.payment.process_a_payment(self.order, payment_info))
+        self.assertEqual(self.order.status, "FAILED")

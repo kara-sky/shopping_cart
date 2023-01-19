@@ -1,5 +1,5 @@
 class Payment:
-    def process_a_payment(self, order, payment_info):
+    def process_payment(self, order, payment_info):
         card_number = payment_info['card_number']
         expiry_date = payment_info['expiry_date']
         cvv = payment_info['cvv']
@@ -10,7 +10,7 @@ class Payment:
         # For this example, I will just simulate a successful payment
         success = True
 
-        if success:
+        if payment_info.get('payment_status')== 'success':
             print("Payment successful!")
             order.status = "PAID"
             return True

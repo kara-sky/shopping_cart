@@ -1,10 +1,10 @@
-from cart import Cart
-from customer import Customer
-from discount import Discount
-from order import Order
-from payment import Payment
-from product import Product
-from store import Store
+from models.cart import Cart
+from models.customer import Customer
+from models.discount import Discount
+from models.order import Order
+from models.payment import Payment
+from models.product import Product
+from models.store import Store
 
 if __name__ == "__main__":
     # Create some products

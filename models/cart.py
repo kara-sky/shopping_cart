@@ -1,3 +1,4 @@
+from config import paymentConfig
 from models.order import Order
 from models.payment import Payment
 from models.store import Store
@@ -20,6 +21,6 @@ class Cart:
 
     def checkout(self, payment_info):
         order = Order(self.customer, self.items, self.total_price)
-        payment = Payment()
+        payment = Payment(self.store, paymentConfig)
         payment.process_payment(order, payment_info)
         return order

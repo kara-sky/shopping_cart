@@ -5,6 +5,7 @@ from models.order import Order
 from models.payment import Payment
 from models.product import Product
 from models.store import Store
+from config import paymentConfig
 
 if __name__ == "__main__":
     # Create some products
@@ -35,6 +36,6 @@ if __name__ == "__main__":
     order = Order(customer, cart.items, cart.total_price)
 
     # Process payment
-    payment = Payment()
+    payment = Payment(store, paymentConfig)
     payment_info = {'card_number': '4111111111111111', 'expiry_date': '12/25', 'cvv': '123'}
     payment.process_payment(order, payment_info)

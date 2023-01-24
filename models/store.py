@@ -1,6 +1,7 @@
 class Store:
     def __init__(self):
         self.products = []
+        self.orders = []
 
     def add_product(self, product):
         self.products.append(product)

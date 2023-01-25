@@ -1,5 +1,6 @@
-import time
-import requests
+import asyncio
+import aiohttp
+
 
 class Payment:
 
@@ -29,13 +30,17 @@ class Payment:
             order.status = "FAILED"
             return False
 
-    def place_order(self, order, payment_info):
+    async def place_order(self, order, payment_info):
         for attempt in range(self.retry_attempts):
-            response = requests.post(self.payment_gateway_url, json=payment_info)
-            if response.status_code == 200:
-                order.status = 'PAID'
-                self.store.orders.append(order)
-                break
-            time.sleep(self.retry_interval)
+            async with aiohttp.ClientSession() as session:
+                try:
+                    response = await asyncio.wait_for(session.post(self.payment_gateway_url, json=payment_info), self.retry_interval)
+                    if response.status == 200:
+                        order.status = 'PAID'
+                        self.store.orders.append(order)
+                        break
+                except asyncio.TimeoutError:
+                    # retry
+                    pass
         else:
-            raise Exception("Failed to place order after multiple attempts")
+            raise Exception("Failed to place order after max number of retries")

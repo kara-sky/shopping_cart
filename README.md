@@ -10,13 +10,14 @@ This is a simple shopping cart project that demonstrates how a shopping cart app
 ## Setup
 
 1. Clone the repository
-   git clone https://github.com/kara-sky/shopping_cart
-
+   `git clone https://github.com/kara-sky/shopping_cart`
 2. Install Poetry (if you haven't already)
-   pip install poetry
-
+   `pip install poetry`
 3. Install dependencies and create a virtual environment
-   poetry install
+   `poetry install`
+4. Install behave for acceptance tests
+  ` pip install behave`
+
 
 
 ## Running the Application
@@ -31,11 +32,12 @@ This is a simple shopping cart project that demonstrates how a shopping cart app
 ## Running the Tests
 
 1. Activate the virtual environment
-   poetry shell
+   `poetry shell`
 
-2. Run the tests
-   python -m unittest discover -s tests/ -p "test_*.py"
-
+2. Run the unit tests
+   `python -m unittest discover -s tests/ -p "test_*.py"`
+3. Run the acceptance tests
+   `behave`
 
 ## Project Structure
 

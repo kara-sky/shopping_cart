@@ -30,6 +30,22 @@ class TestCart(unittest.TestCase):
         self.assertEqual(self.cart.items, [self.product2])
         self.assertEqual(self.cart.total_price, self.product2.price)
 
+    def test_find_item_by_name(self):
+        cart = Cart("Test Customer")
+        product1 = Product("Test Product 1", "Test Description 1", 20, "test1.jpg")
+        product2 = Product("Test Product 2", "Test Description 2", 25, "test2.jpg")
+        cart.add_item(product1)
+        cart.add_item(product2)
+
+        # Test finding an existing item
+        found_item = cart.find_item_by_name("Test Product 1")
+        self.assertIsNotNone(found_item)
+        self.assertEqual(found_item.price, 20)
+
+        # Test finding a non-existing item
+        found_item = cart.find_item_by_name("Item 3")
+        self.assertIsNone(found_item)
+
     def test_checkout(self):
         self.cart.add_item(self.product1)
         self.cart.add_item(self.product2)

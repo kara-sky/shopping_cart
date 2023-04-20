@@ -13,8 +13,14 @@ class Payment:
         if success:
             print("Payment successful!")
             order.status = "PAID"
+            self.send_email(order)
             return True
         else:
             print("Payment failed!")
             order.status = "FAILED"
             return False
+
+    def send_email(self, order):
+        # This method sends an email to the customer to confirm the order has been paid
+        print(f"Sending email confirmation to {order.customer.email}...")
+        # Code to actually send the email would go here

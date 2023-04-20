@@ -12,7 +12,7 @@ class Order:
 
     def _generate_order_number(self):
         # generate a unique order number
-        return str(uuid.uuid1())
+        return str(uuid.uuid4())
 
     def __str__(self):
         return f"Order number: {self.order_number}\nCustomer: {self.customer.name}\nTotal price: {self.total_price}\nItems: {self.items}"

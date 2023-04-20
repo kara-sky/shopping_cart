@@ -16,5 +16,5 @@ class Cart:
         total_price = sum(item.price for item in self.items)
         order = Order(customer, self.items, total_price)
         payment = Payment()
-        payment.process_a_payment(order, payment_info)
+        payment.process_payment(order, payment_info)
         return order

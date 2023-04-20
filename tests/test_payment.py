@@ -18,7 +18,7 @@ class TestPayment(unittest.TestCase):
 
     def test_process_payment_success(self):
         payment_info = {'card_number': '4111111111111111', 'expiry_date': '12/25', 'cvv': '123'}
-        self.assertTrue(self.payment.process_a_payment(self.order, payment_info))
+        self.assertTrue(self.payment.process_payment(self.order, payment_info))
         self.assertEqual(self.order.status, "PAID")
 
     # disable this test case for now because the process_a_payment method is hard coded to succeed

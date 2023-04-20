@@ -37,4 +37,4 @@ if __name__ == "__main__":
     # Process payment
     payment = Payment()
     payment_info = {'card_number': '4111111111111111', 'expiry_date': '12/25', 'cvv': '123'}
-    payment.process_a_payment(order, payment_info)
+    payment.process_payment(order, payment_info)

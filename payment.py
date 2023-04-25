@@ -1,3 +1,4 @@
+# This is the payment module for shopping cart
 class Payment:
     def last_four_chars(self, string):
         return string[-4:]

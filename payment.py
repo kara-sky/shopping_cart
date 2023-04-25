@@ -16,15 +16,9 @@ class Payment:
             print("Payment successful!")
             print(f"Card details: ${self.last_four_chars(card_number)}")
             order.status = "PAID"
-            self.send_email(order)
             return True
         else:
             print("Payment failed!")
             print(f"Card details: ${self.last_four_chars(card_number)}")
             order.status = "FAILED"
             return False
-
-    def send_email(self, order):
-        # This method sends an email to the customer to confirm the order has been paid
-        print(f"Sending email confirmation to {order.customer.email}...")
-        # Code to actually send the email would go here
